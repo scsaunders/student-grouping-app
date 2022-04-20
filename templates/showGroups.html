@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+  <head>
+  <title>Student Information</title>
+    <meta name="description" content="Student Information">
+    <meta name="keywords" content="html tutorial template">
+    <link rel="stylesheet" href="static/style.css">
+  </head>
+  <body>
+      <div id="container">
+        <h1>Grouping App</h1>
+        <h2>Step 3: Show Created Groups</h2>
+        <div id="breadCrumb" style="font-size: 12px;"><a href="#" onclick="window.history.go(-2)">Step 1</a> > <a href="#" onclick="window.history.back()">Step 2</a> > Step 3</div>
+        <h3>Activity: {{ assignmentTitle|safe }}</h3>
+        <p>{{ assignmentDescription|safe }}</p>
+          {{ tableGroupsDisplay|safe }}
+        <form action="/insertAssignment" method="post">
+          {{ hiddenCriteriaFields|safe }}
+          {{ hiddenAssignmentFields|safe }}
+          {{ hiddenStudentFields|safe }}
+          <button>Save</button>
+        </form>
+        <br>
+         <button onclick="window.location.replace('/createAssignment')">Start Over</button>
+         <footer>Grouping App &#169; 2022</footer>
+      </div>
+  </body>
+</html>

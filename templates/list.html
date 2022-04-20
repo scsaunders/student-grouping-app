@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+  <head>
+  <title>Student Information</title>
+    <meta name="description" content="Student Information">
+    <meta name="keywords" content="html tutorial template">
+    <style>
+      body {
+        font-family: arial;
+        height: 100%;
+        background-repeat: no-repeat;
+      }
+      td {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+      .rangeLabel {
+        font-size: 10px;
+        color: gray;
+      }
+      td {
+        width: 150px;
+      }
+      th {
+        text-align: left;
+      }
+      table {
+        margin: auto;
+        background-color: rgb(247, 245, 245);
+        box-shadow: rgba(255, 255, 255, 1) 0px 0px 30px;
+        padding: 20px;
+        padding-left: 40px;
+        width: 100%;
+        text-transform: capitalize;
+      }
+      h1 {
+        color: gray;
+        padding-top: 20px;
+      }
+      div#container {
+        position: relative;
+        width: 750px;
+        margin: auto
+      }
+      tr:hover {
+        background-color: rgba(0,0,0,.1);
+        cursor: default;
+      }
+      .editContainer {
+        text-align: center;
+        width: 60px;
+      }
+      #list {
+        margin-bottom: 30px;
+        height: 300px;
+        overflow: auto;
+        border: 1px solid lightgray;
+      }
+      #class {
+        margin-bottom: 30px;
+      }
+      #user {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 300px;
+        text-align: right;
+        font-size: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="user">Logged in: {{ user_info|safe }}</div>
+      <!--<button onclick="window.location.href = '/'">Update Student Critera</button>-->
+    <h1>Student Criteria</h1>
+    <h2>Form to add students to class.</h2>
+    <form action="/list" method="post">
+    <div id="class">
+        <h3>Select class:</h3>
+          {{ class_options|safe }}
+        <button>Select</button>
+      </div>
+    </form>
+    <form>
+    <h3>Select students:</h3>
+    <div id="list">
+    {{ student_table|safe }}
+    </div>
+    <div>
+      {{ save_button|safe }}
+  </div>
+  </form>
+  <footer>Grouping App &#169; 2022</footer>
+  </div>
+  </body>
+</html>

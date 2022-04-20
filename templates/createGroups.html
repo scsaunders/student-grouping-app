@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+  <head>
+  <title>Grouping App</title>
+    <meta name="description" content="Student Information">
+    <meta name="keywords" content="html tutorial template">
+    <link rel="stylesheet" href="static/style.css">
+  </head>
+  <body>
+    <div id="container">
+      <div id="user">Logged in: {{ user_info|safe }}</div>
+      <!--<button onclick="window.location.href = '/'">Update Student Critera</button>-->
+    <h1>Grouping App</h1>
+    <h2>Step 2: Set required group criteria.</h2>
+    <form action="/showGroups" method="post">
+      {{ hidden_fields|safe }}
+      <div id="class">
+        <h3>{{ show_assignment_title|safe }}</h3>
+        <table>
+          <tr>
+            <td style="width: 130px;"><label for="group_by">Group by:</label></td>
+            <td>
+              <input type="checkbox" name="criteria" id="skill" value="2"> <label for="skill">Skill Level</label>
+              
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <input type="checkbox" name="criteria" id="gender" value="1"> <label for="gender">Gender</label>
+              
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <input type="checkbox" name="criteria" id="preference" value="3"> <label for="preference">Preferred Partner</label>
+            </td>
+          </tr>
+          <!--<tr>
+            <td></td>
+            <td><input type = "checkbox" value = "no_repeat" id = 'submit'> Work with someone new</input></td>
+          </tr>-->
+          <tr><td></td><td></td></tr>
+          <tr>
+            <td>
+
+            </td>
+            <td>
+              <button>Create Groups</button>
+            </td>
+          </tr>
+        </table>      
+      </div>
+    </form>
+    {{ cancel_button|safe }}
+    <footer>Grouping App &#169; 2022</footer>
+  </div>
+</body>
+</html>
