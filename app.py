@@ -414,6 +414,19 @@ def insertAssignment():
     cursor.close()
     return showAssignments()
 
+def deleteAssignment(assignment_id):
+    deleteGroups = "DELETE FROM gt_db.student_groups WHERE assignment_id = '" + assignment_id + "'"
+    deleteCriteria = "DELETE FROM gt_db.assignments_criteria WHERE assignment_id = '" + assignment_id + "'"
+    deleteAssignment = "DELETE FROM gt_db.assignments WHERE assignment_id = '" + assignment_id + "'"
+    cursor = mysql.connection.cursor()
+    cursor.execute(deleteGroups)
+    mysql.connection.commit()
+    cursor.execute(deleteCriteria)
+    mysql.connection.commit()
+    cursor.execute(deleteAssignment)
+    mysql.connection.commit()
+    cursor.close()
+
 
 @app.route('/assignmentSheet', methods = ['POST', 'GET'])
 def assignmentSheet():
