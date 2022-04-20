@@ -378,7 +378,7 @@ def showAssignments():
     assignmentTable = '<table id="groupsTable">'
     assignmentTable += '<tr class="topRow"><th>Name</th><th>Date</th><th>Course</th><th></th></tr>'
     for x in assignments:
-        assignmentTable += '<tr><td>' + str(x[0]) + '</td><td>' + str(x[1]) + '</td><td>' + str(getClassName(x[4])) + '</td><td><form action="/assignmentSheet" method="post"><input type="hidden" value="' + str(x[2]) + '" name="assignmentId"><input type="hidden" value="' + str(x[0]) + '" name="assignmentName"><input type="hidden" value="' + str(x[3]) + '" name="assignmentDescription"><input type="hidden" value="' + str(x[1]) + '" name="assignmentDate"><input type="hidden" value="' + str(x[4]) + '" name="classId"><button>View Groups</button></form></td></tr>'
+        assignmentTable += '<tr><td>' + str(x[0]) + '</td><td>' + str(x[1]) + '</td><td>' + str(getClassName(x[4])) + '</td><td><form action="/assignmentSheet" method="post"><input type="hidden" value="' + str(x[2]) + '" name="assignmentId"><input type="hidden" value="' + str(x[0]) + '" name="assignmentName"><input type="hidden" value="' + str(x[3]) + '" name="assignmentDescription"><input type="hidden" value="' + str(x[1]) + '" name="assignmentDate"><input type="hidden" value="' + str(x[4]) + '" name="classId"><button>View</button></form> <form action="/deleteAssignment" method="post"><input type="hidden" value="' + str(x[2]) + '" name="assignmentId"><button>Delete</button></form></td></tr>'
     assignmentTable += "</table>"
     okayButton = '<button onclick="window.location.replace(\'/\');" style="position: relative; margin-top: 10px;">Back to dashboard</button>'
     return render_template('showAssignments.html', assignmentTable = assignmentTable, okay_button = okayButton, user_info = getUser())
@@ -414,7 +414,10 @@ def insertAssignment():
     cursor.close()
     return showAssignments()
 
-def deleteAssignment(assignment_id):
+@app.route('/deleteAssignment', methods = ['POST', 'GET'])
+def deleteAssignment():
+    assignment_id = request.form['assignmentId']
+    print(assignment_id)
     deleteGroups = "DELETE FROM gt_db.student_groups WHERE assignment_id = '" + assignment_id + "'"
     deleteCriteria = "DELETE FROM gt_db.assignments_criteria WHERE assignment_id = '" + assignment_id + "'"
     deleteAssignment = "DELETE FROM gt_db.assignments WHERE assignment_id = '" + assignment_id + "'"
@@ -426,6 +429,7 @@ def deleteAssignment(assignment_id):
     cursor.execute(deleteAssignment)
     mysql.connection.commit()
     cursor.close()
+    return showAssignments()
 
 
 @app.route('/assignmentSheet', methods = ['POST', 'GET'])
