@@ -1,0 +1,172 @@
+body {
+    font-family: arial;
+    height: 100%;
+    background-repeat: no-repeat;
+  }
+table {
+  margin-bottom: 5px;
+}
+  .rangeLabel {
+    font-size: 10px;
+    color: gray;
+  }
+  h1 {
+    color: gray;
+    padding-top: 0px;
+    margin-top: 15px;
+    margin-bottom: 35px;
+  }
+  div#container {
+    position: relative;
+    width: 500px;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    min-height: 630px;
+    overflow: hidden;
+    box-shadow: 2px 2px 2px rgba(0,0,0,.2);
+  }
+  body {
+    background-color:rgba(0, 0, 0, .2);
+  }
+  .editContainer {
+    text-align: center;
+    width: 60px;
+  }
+  #list {
+    margin-bottom: 10px;
+    /*border: 1px solid lightgray;*/
+  }
+  #class {
+    margin-bottom: 10px;
+    margin-top: 20px;
+  }
+  .font70 {
+    font-size: 70%;
+  }
+  #user {
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: right;
+    font-size: 10px;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, .05);
+    /*border-radius: 4px;*/
+
+  }
+  #breadCrumb {
+    padding: 8px;
+    background-color: rgba(0,0,0,.1);
+    display: inline-block;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+  #breadCrumb a {
+    color: gray;
+  }
+  #breadCrumb a:hover {
+    color: chocolate;
+  }
+  td {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  h2 {
+    margin-bottom: 0px;
+  }
+  div.icon {
+    margin: 20px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    height: 122px;
+    width: 122px;
+    background-color: rgba(0,0,0,.2);
+    border-radius: 10px;
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    box-shadow: 2px 2px 2px rgba(0,0,0,.2);
+  }
+  div.icon:hover {
+    /*box-shadow: 2px 2px 5px rgba(255, 94, 0, 1);*/
+    box-shadow: 2px 2px 2px rgba(0,0,0,.3);
+    /*text-shadow: 1px 1px 2px rgba(255, 94, 0,.4);*/
+  }
+  div.icon div {
+    position: absolute;
+    bottom: -15px;
+    text-align: center;
+    width: 100%;
+    font-size: 11px;
+    color: rgb(78, 78, 78);
+    font-weight: bold;
+
+    /**/
+  }
+  div.colorBlue {
+    background-image: linear-gradient(rgba(61, 184, 255,.4), rgba(61, 184, 255,.4)), url('../static/bgGroups2.jpg');
+    background-size: cover;
+  }
+  div.colorGreen {
+    background-image: linear-gradient(rgba(82, 254, 82,.4), rgba(82, 254, 82,.4)), url('../static/bgGroups1.jpg');
+    background-size: cover;
+  }
+  div.colorOrange {
+    background-image: linear-gradient(rgba(255, 160, 52,.4), rgba(255, 160, 52,.4)), url('../static/bgSetup2.jpg');
+    background-size: cover;
+  }
+  div.colorRed {
+    background-image: linear-gradient(rgba(255, 61, 61,.4), rgba(255, 61, 61,.4)), url('../static/bgHelp1.jpg');
+    background-size: cover;
+  }
+  div.colorPurple {
+    background-image: linear-gradient(rgba(212, 88, 253,.4), rgba(212, 88, 253,.4)), url('../static/bgHelp2.jpg');
+    background-size: cover;
+  }
+  #groups, #setup {
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
+    padding-bottom: 20px;
+  }
+  #groupsTable {
+    width: 100%;
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  #groupsTable, #groupsTable td,  #groupsTable th {
+    border-collapse: collapse;
+  }
+  #groupsTable td, #groupsTable th {
+    padding: 20px;
+    text-align: left;
+  }
+  #groupsTable tr:hover, #groupsTable tr:nth-child(even):hover {
+    background-color: rgba(0, 0, 0, 0.03)
+  }
+  #groupsTable tr.topRow {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+  }
+  #groupsTable tr {
+    border-top: 1px solid lightgray;
+  }
+  table.criteriaKey {
+    font-size: 12px;
+    margin-bottom: 25px;
+  }
+  table.criteriaKey tr, table.criteriaKey tr td { 
+    padding: 0px;
+    margin: 0px;
+  }
+footer {
+  position: absolute;
+  bottom: 10px;
+  left: 0px;
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+}
