@@ -170,3 +170,7 @@ footer {
   text-align: center;
   font-size: 12px;
 }
+.assignmentButton {
+  margin-bottom: 3px;
+  width: 60px;
+}
