@@ -18,23 +18,11 @@ user_id = 1
 originalRoster = []
 last_assignment = 0
 
-<<<<<<< HEAD
-=======
-#Lauren's pages
-@app.route('/howToUse')
-def howToUse():
-    return render_template('howToUse.html', partner_options = printResults(), user_info = getUser(), user_info_dash = getUserDash())
-
-@app.route('/aboutPairProgramming')
-def aboutPairProgramming():
-    return render_template('aboutPairProgramming.html', partner_options = printResults(), user_info = getUser(), user_info_dash = getUserDash())
-
-
->>>>>>> 55962d955d3a9aaf5fe75140a719705ba3ddd56a
 
 @app.route('/')
 def index():
     return render_template('index.html', partner_options=printResults(), user_info=getUser(), user_info_dash=getUserDash())
+
 
 @app.route('/form')
 def form():
@@ -139,13 +127,9 @@ def generateClassTable(class_id):
     cursor.execute("SELECT s.student_id, s.first_name, s.last_name, s.gender, sc.coding_level, sc.preferred_partner FROM teachers t JOIN classes c ON t.teacher_id = c.teacher_id JOIN students_classes sc ON sc.class_id = c.class_id JOIN students s ON sc.student_id = s.student_id WHERE c.class_id = '" + class_id + "' ORDER BY s.last_name ASC")
     current_students = cursor.fetchall()
     cursor.close()
-<<<<<<< HEAD
     student_table = '<table> <tr> <td colspan=2>' + \
         class_name[0] + \
         ' class roster:<br><span class="font70">(Uncheck to remove students)</span></td> <th></th></tr>'
-=======
-    student_table = '<table style="width:100%;"> <tr> <td colspan=2>' + class_name[0] + ' class roster:<br><span class="font70">(Uncheck to remove students)</span></td></tr>'
->>>>>>> 55962d955d3a9aaf5fe75140a719705ba3ddd56a
     roster = []
     for z in current_students:
         roster.append(z[0])
@@ -434,12 +418,8 @@ def showAssignments():
     assignmentTable = '<table id="groupsTable">'
     assignmentTable += '<tr class="topRow"><th>Name</th><th>Date</th><th>Course</th><th></th></tr>'
     for x in assignments:
-<<<<<<< HEAD
         assignmentTable += '<tr><td>' + str(x[0]) + '</td><td>' + str(x[1]) + '</td><td>' + str(getClassName(x[4])) + '</td><td><form action="/assignmentSheet" method="post"><input type="hidden" value="' + str(x[2]) + '" name="assignmentId"><input type="hidden" value="' + str(x[0]) + '" name="assignmentName"><input type="hidden" value="' + str(
             x[3]) + '" name="assignmentDescription"><input type="hidden" value="' + str(x[1]) + '" name="assignmentDate"><input type="hidden" value="' + str(x[4]) + '" name="classId"><button style="background-color: rgba(0, 119, 255, 0.14); color: #0077ff;">View</button></form> <form action="/deleteAssignment" method="post"><input type="hidden" value="' + str(x[2]) + '" name="assignmentId"><button style="background-color: rgba(220, 20, 60, 0.157); color: crimson;">Delete</button></form></td></tr>'
-=======
-        assignmentTable += '<tr><td>' + str(x[0]) + '</td><td>' + str(x[1]) + '</td><td>' + str(getClassName(x[4])) + '</td><td><form action="/assignmentSheet" method="post"><input type="hidden" value="' + str(x[2]) + '" name="assignmentId"><input type="hidden" value="' + str(x[0]) + '" name="assignmentName"><input type="hidden" value="' + str(x[3]) + '" name="assignmentDescription"><input type="hidden" value="' + str(x[1]) + '" name="assignmentDate"><input type="hidden" value="' + str(x[4]) + '" name="classId"><button class="assignmentButton">View</button></form> <form action="/deleteAssignment" method="post"><input type="hidden" value="' + str(x[2]) + '" name="assignmentId"><button class="assignmentButton">Delete</button></form></td></tr>'
->>>>>>> 55962d955d3a9aaf5fe75140a719705ba3ddd56a
     assignmentTable += "</table>"
     okayButton = '<button onclick="window.location.replace(\'/\');" style=" color: orangered; background-color: rgba(255, 68, 0, 0.158); position: relative; margin-top: 10px;">Back to dashboard</button>'
     return render_template('showAssignments.html', assignmentTable=assignmentTable, okay_button=okayButton, user_info=getUser())
