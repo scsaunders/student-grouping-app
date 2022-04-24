@@ -18,7 +18,7 @@ table {
   }
   div#container {
     position: relative;
-    width: 60%;
+    width: 500px;
     margin: auto;
     margin-top: 30px;
     margin-bottom: 30px;
@@ -26,7 +26,6 @@ table {
     padding: 30px;
     border-radius: 10px;
     min-height: 630px;
-    max-width: 750px;
     overflow: hidden;
     box-shadow: 2px 2px 2px rgba(0,0,0,.2);
   }
@@ -170,4 +169,8 @@ footer {
   width: 100%;
   text-align: center;
   font-size: 12px;
+}
+.assignmentButton {
+  margin-bottom: 3px;
+  width: 60px;
 }
