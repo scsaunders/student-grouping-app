@@ -1,19 +1,19 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
-  <title>Student Information</title>
-    <meta name="description" content="Student Information">
-    <meta name="keywords" content="html tutorial template">
-    <link rel="stylesheet" href="static/style.css">
+    <title>Student Information</title>
+    <meta name="description" content="Student Information" />
+    <meta name="keywords" content="html tutorial template" />
+    <link rel="stylesheet" href="static/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   </head>
   <body>
-      <div id="container">
-        <div id="user">
-          Logged in: {{ user_info|safe }}
-        </div>
-        <h1>Grouping App</h1>
-        <h2>Welcome, {{ user_info_dash|safe }}!</h2>
-        <div id="groups">
+    <div id="container">
+      <div id="user">Logged in: {{ user_info|safe }}</div>
+      <h1>Grouping App</h1>
+      <h2>Welcome, {{ user_info_dash|safe }}!</h2>
+      <div id="groups">
         <h3>Groups</h3>
         <div id="createGroups" class="icon colorGreen">
           <div>Create groups</div>
@@ -24,8 +24,8 @@
         <div id="addStudents" class="icon colorOrange">
           <div>Class rosters</div>
         </div>
-        </div>
-        <div id="help">
+      </div>
+      <div id="help">
         <h3>Help</h3>
         <div id="howTo" class="icon colorRed">
           <div>How to use</div>
@@ -34,15 +34,33 @@
           <div>About this tool</div>
         </div>
       </div>
-        <!--<p class="font70" style="margin-top: 40px;">Note: We'll assume the teacher, the teacher's classes, and the teacher's students are in the system already.</p>-->
-    <footer>Grouping App &#169; 2022</footer>
+      <!--<p class="font70" style="margin-top: 40px;">Note: We'll assume the teacher, the teacher's classes, and the teacher's students are in the system already.</p>-->
+      <footer>Grouping App &#169; 2022</footer>
     </div>
     <script>
-      document.getElementById("createGroups").addEventListener("click", function(){window.location.href = "/createAssignment"})
-      document.getElementById("groupHistory").addEventListener("click", function(){window.location.href = "/showAssignments"})
-      document.getElementById("addStudents").addEventListener("click", function(){window.location.href = "/selectClass"})
-      document.getElementById("howTo").addEventListener("click", function(){window.location.href = "#"})
-      document.getElementById("aboutTool").addEventListener("click", function(){window.location.href = "#"})
+      document
+        .getElementById("createGroups")
+        .addEventListener("click", function () {
+          window.location.href = "/createAssignment";
+        });
+      document
+        .getElementById("groupHistory")
+        .addEventListener("click", function () {
+          window.location.href = "/showAssignments";
+        });
+      document
+        .getElementById("addStudents")
+        .addEventListener("click", function () {
+          window.location.href = "/selectClass";
+        });
+      document.getElementById("howTo").addEventListener("click", function () {
+        window.location.href = "#";
+      });
+      document
+        .getElementById("aboutTool")
+        .addEventListener("click", function () {
+          window.location.href = "#";
+        });
     </script>
   </body>
 </html>

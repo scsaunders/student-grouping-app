@@ -1,26 +1,29 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
-  <title>Student Information</title>
-    <meta name="description" content="Student Information">
-    <meta name="keywords" content="html tutorial template">
-    <link rel="stylesheet" href="static/style.css">
+    <title>Student Information</title>
+    <meta name="description" content="Student Information" />
+    <meta name="keywords" content="html tutorial template" />
+    <link rel="stylesheet" href="static/style.css" />
   </head>
   <body>
     <div id="container">
-      <div id="user">
-        Logged in: {{ user_info|safe }}
-      </div>
+      <div id="user">Logged in: {{ user_info|safe }}</div>
       <!--<button onclick="window.location.href = '/'">Update Student Critera</button>-->
       <h1>Grouping App</h1>
       <h2>Class rosters.</h2>
-      <p>Here you can add students to a class and also set the students course-specific criteria.</p>
+      <p>
+        Here you can add students to a class and also set the students
+        course-specific criteria.
+      </p>
       <form action="/selectClass" method="post">
         <div id="class">
           {{ class_options|safe }}
-          <button>Select</button>
+          <button id="saveButton">Select</button>
           <script>
-            document.getElementById("classSelect").addEventListener("change",submitForm)
+            document
+              .getElementById("classSelect")
+              .addEventListener("change", submitForm);
             function submitForm() {
               this.form.submit();
             }
@@ -28,25 +31,21 @@
         </div>
       </form>
       <form action="/updateClass" method="post">
-
-        <div id="list">
-          {{ student_table|safe }}
-        </div>
+        <div id="list">{{ student_table|safe }}</div>
         <!--<div id="button">
           {{ save_button|safe }}
           
         </div>-->
       </form>
-      {{ cancel_button|safe }}
-      {{ okay_button|safe }}
+      {{ cancel_button|safe }} {{ okay_button|safe }}
       <footer>Grouping App &#169; 2022</footer>
     </div>
     <script>
       var checkboxes = document.querySelectorAll('input[type="checkbox"]');
       //alert(checkboxes.length);
       for (x = 0; x < checkboxes.length; x++) {
-        checkboxes[x].addEventListener("change",submitForm);
+        checkboxes[x].addEventListener("change", submitForm);
       }
     </script>
-</body>
+  </body>
 </html>

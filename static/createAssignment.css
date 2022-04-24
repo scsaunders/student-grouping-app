@@ -1,0 +1,40 @@
+/* laramie edits */
+
+input#activityType {
+  border: 2px solid grey;
+  font-size: 15px;
+  font-family: "Roboto";
+  width: 300px;
+  padding: 8px 12px;
+  color: #333;
+  background-color: #eee;
+  border: 2px solid #ddd;
+  cursor: pointer;
+  border-radius: 10px;
+}
+textarea {
+  resize: none;
+  overflow: auto;
+  font-size: 15px;
+  font-family: "Roboto";
+  width: 300px;
+  padding: 8px 12px;
+  color: #333;
+  background-color: #eee;
+  border: 2px solid #ddd;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+button#nextButton {
+  background-color: rgba(0, 128, 0, 0.157);
+  color: green;
+}
+
+textarea:focus,
+textarea:hover,
+#activityType:hover,
+#activityType:focus {
+  outline: none;
+  border: 2px solid #0077ff;
+}

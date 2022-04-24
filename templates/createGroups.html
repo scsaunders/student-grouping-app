@@ -1,15 +1,24 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-  <head>
+
+<head>
   <title>Grouping App</title>
-    <meta name="description" content="Student Information">
-    <meta name="keywords" content="html tutorial template">
-    <link rel="stylesheet" href="static/style.css">
-  </head>
-  <body>
-    <div id="container">
-      <div id="user">Logged in: {{ user_info|safe }}</div>
-      <!--<button onclick="window.location.href = '/'">Update Student Critera</button>-->
+  <meta name="description" content="Student Information" />
+  <meta name="keywords" content="html tutorial template" />
+  <link rel="stylesheet" href="static/style.css" />
+  <link rel="stylesheet" href="static/createGroup.css" />
+</head>
+
+<svg class="checkbox-symbol">
+  <symbol id="check" viewbox="0 0 12 10">
+    <polyline points="1.5 6 4.5 9 10.5 1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></polyline>
+  </symbol>
+</svg>
+
+<body>
+  <div id="container">
+    <div id="user">Logged in: {{ user_info|safe }}</div>
+    <!--<button onclick="window.location.href = '/'">Update Student Critera</button>-->
     <h1>Grouping App</h1>
     <h2>Step 2: Set required group criteria.</h2>
     <form action="/showGroups" method="post">
@@ -18,43 +27,68 @@
         <h3>{{ show_assignment_title|safe }}</h3>
         <table>
           <tr>
-            <td style="width: 130px;"><label for="group_by">Group by:</label></td>
+            <td style="width: 130px">
+              <label for="group_by">Group by:</label>
+            </td>
             <td>
-              <input type="checkbox" name="criteria" id="skill" value="2"> <label for="skill">Skill Level</label>
-              
+              <input class="checkbox-input" type="checkbox" name="criteria" id="skill" value="2" />
+              <label for="skill" class="checkbox">
+                <span>
+                  <svg width="12px" height="10px">
+                    <use xlink:href="#check"></use>
+                  </svg>
+                </span>
+                <span>Skill Level</span>
+              </label>
             </td>
           </tr>
           <tr>
             <td></td>
             <td>
-              <input type="checkbox" name="criteria" id="gender" value="1"> <label for="gender">Gender</label>
-              
+              <input class="checkbox-input" type="checkbox" name="criteria" id="gender" value="1" />
+              <label for="gender" class="checkbox">
+                <span>
+                  <svg width="12px" height="10px">
+                    <use xlink:href="#check"></use>
+                  </svg>
+                </span>
+                <span>Gender</span>
+              </label>
             </td>
           </tr>
           <tr>
             <td></td>
             <td>
-              <input type="checkbox" name="criteria" id="preference" value="3"> <label for="preference">Preferred Partner</label>
+              <input class="checkbox-input" type="checkbox" name="criteria" id="preference" value="3" />
+              <label for="preference" class="checkbox">
+                <span>
+                  <svg width="12px" height="10px">
+                    <use xlink:href="#check"></use>
+                  </svg>
+                </span>
+                <span>Preferred Partner</span>
             </td>
           </tr>
           <!--<tr>
             <td></td>
             <td><input type = "checkbox" value = "no_repeat" id = 'submit'> Work with someone new</input></td>
           </tr>-->
-          <tr><td></td><td></td></tr>
           <tr>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
             <td>
-
-            </td>
-            <td>
-              <button>Create Groups</button>
+              <button id="createGroup">Create Groups</button>
             </td>
           </tr>
-        </table>      
+        </table>
       </div>
     </form>
     {{ cancel_button|safe }}
     <footer>Grouping App &#169; 2022</footer>
   </div>
 </body>
+
 </html>

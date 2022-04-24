@@ -1,54 +1,69 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
-  <title>Student Information</title>
-    <meta name="description" content="Student Information">
-    <meta name="keywords" content="html tutorial template">
-    <link rel="stylesheet" href="static/style.css">
+    <title>Student Information</title>
+    <meta name="description" content="Student Information" />
+    <meta name="keywords" content="html tutorial template" />
+    <link rel="stylesheet" href="static/style.css" />
+    <link rel="stylesheet" href="static/createAssignment.css" />
   </head>
   <body>
     <div id="container">
       <div id="user">Logged in: {{ user_info|safe }}</div>
       <!--<button onclick="window.location.href = '/'">Update Student Critera</button>-->
-    <h1>Grouping App</h1>
-    <h2>Step 1: Create an activity.</h2>
-    <form action="/createGroups" method="post">
-      <div id="breadCrumb" style="font-size: 12px;">Step 1 > </div>
-      <div id="class">
-        <h3>Activity</h3>
-        <table>
-          <tr>
-            <td style="width: 130px;">Select a class:</td>
-            <td>{{ class_options|safe }}</td>
-          </tr>
-          <tr>
-            <td>Activity title:</td>
-            <td><input type="text" name="assignmentTitle" required></td>
-          </tr>
-          <tr>
-            <td>Description:</td>
-            <td><textarea name="assignmentDescription" style="width: 300px; height: 50px;"></textarea></td>
-          </tr>
-          <tr><td></td><td></td></tr>
-          <tr>
-            <td>
-
-            </td>
-            <td>
-              <button>Next</button>
-            </td>
-            <script>
-            //document.getElementById("classSelect").addEventListener("change",submitForm)
-            function submitForm() {
-              this.form.submit();
-            }
-          </script>
-          </tr>
-        </table>      
-      </div>
-    </form>
-    {{ cancel_button|safe }}
-    <footer>Grouping App &#169; 2022</footer>
-  </div>
-</body>
+      <h1>Grouping App</h1>
+      <h2>Step 1: Create an activity.</h2>
+      <form action="/createGroups" method="post">
+        <div id="breadCrumb" style="font-size: 12px">Step 1 ></div>
+        <div id="class">
+          <h3>Activity</h3>
+          <table>
+            <tr>
+              <td style="width: 130px">Select a class:</td>
+              <td>{{ class_options|safe }}</td>
+            </tr>
+            <tr>
+              <td>Activity title:</td>
+              <td>
+                <input
+                  id="activityType"
+                  type="text"
+                  name="assignmentTitle"
+                  required
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Description:</td>
+              <td>
+                <textarea
+                  name="assignmentDescription"
+                  style="width: 300px; height: 50px"
+                  class="description-text"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>
+                <button id="nextButton">Next</button>
+              </td>
+              <script>
+                //document.getElementById("classSelect").addEventListener("change",submitForm)
+                function submitForm() {
+                  this.form.submit();
+                }
+              </script>
+            </tr>
+          </table>
+        </div>
+      </form>
+      <span>{{ cancel_button|safe }}</span>
+      <footer>Grouping App &#169; 2022</footer>
+    </div>
+  </body>
 </html>
