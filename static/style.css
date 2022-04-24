@@ -134,9 +134,18 @@ table {
     background-image: linear-gradient(rgba(212, 88, 253,.4), rgba(212, 88, 253,.4)), url('../static/bgHelp2.jpg');
     background-size: cover;
   }
-  #groups, #setup {
+  #groups, #help {
     border-bottom: 1px solid rgba(0, 0, 0, .2);
     padding-bottom: 20px;
+    text-align: center;
+  }
+ #help {
+    border-bottom: none;
+  }
+  #groups h3, #help h3 {
+    text-align: left;
+    font-size: 16px;
+    color:rgb(145, 145, 145)
   }
   #groupsTable {
     width: 100%;
