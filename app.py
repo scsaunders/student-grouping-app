@@ -136,9 +136,9 @@ def generateClassTable(class_id):
     cursor.execute("SELECT s.student_id, s.first_name, s.last_name, s.gender, sc.coding_level, sc.preferred_partner FROM teachers t JOIN classes c ON t.teacher_id = c.teacher_id JOIN students_classes sc ON sc.class_id = c.class_id JOIN students s ON sc.student_id = s.student_id WHERE c.class_id = '" + class_id + "' ORDER BY s.last_name ASC")
     current_students = cursor.fetchall()
     cursor.close()
-    student_table = '<table> <tr> <td colspan=2>' + \
+    student_table = '<table style="width: 100%;"> <tr> <td colspan=2>' + \
         class_name[0] + \
-        ' class roster:<br><span class="font70">(Uncheck to remove students)</span></td> <th></th></tr>'
+        ' class roster:<br><span class="font70">(Uncheck to remove students)</span></td></tr>'
     roster = []
     for z in current_students:
         roster.append(z[0])
