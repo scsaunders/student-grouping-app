@@ -239,3 +239,7 @@ button#startOverButton {
 #classSelect option {
   background: #fff;
 }
+
+img {
+  border-radius: 10px;
+}
