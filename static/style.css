@@ -29,6 +29,11 @@ div#container {
   overflow: hidden;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
 }
+.iframe {
+  width: 90%;
+  height: 280px;
+  max-width: 500px;
+}
 body {
   background-color: rgba(0, 0, 0, 0.2);
 }
