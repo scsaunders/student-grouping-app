@@ -80,7 +80,7 @@ td {
   padding-bottom: 5px;
 }
 h2 {
-  margin-bottom: 0px;
+  margin-bottom: 10px;
 }
 div.icon {
   margin: 20px;
@@ -246,6 +246,23 @@ button#startOverButton {
 #preferredPartner option,
 #classSelect option {
   background: #fff;
+}
+
+#studentName {
+  color: #0077ff;
+  padding: 5px;
+  border: 2px solid #0077ff;
+  background-color: rgba(0, 119, 255, 0.153);
+  border-radius: 10px;
+}
+
+#className {
+  color: orange;
+  font-weight: bold;
+  padding: 5px;
+  border: 2px solid orange;
+  background-color: rgba(255, 166, 0, 0.157);
+  border-radius: 10px;
 }
 
 img {
