@@ -37,6 +37,7 @@
       }
     </style>-->
   </head>
+
   <body>
     <div id="container">
       <div id="user">Logged in: {{ user_info|safe }}</div>
@@ -45,12 +46,14 @@
       <form action="/selectClass1" method="POST">
         <table>
           <tr>
+            <span class="font70" id="className"></span>
+          </tr>
+          <tr>
+            <td>Name:</td>
             <td style="padding-top: 20px">
-              <span id="studentName"></span><br /><span
-                class="font70"
-                id="className"
-              ></span>
+              <span id="studentName"></span><br />
             </td>
+
             <td>
               <select style="width: 150px" name="studentId" id="studentId">
                 <option></option>
@@ -86,11 +89,7 @@
           <tr>
             <td>Preferred Partner:</td>
             <td>
-              <select
-                style="width: 100px"
-                name="preferredPartner"
-                id="preferredPartner"
-              >
+              <select name="preferredPartner" id="preferredPartner">
                 <option value="0"></option>
                 {{ partner_options|safe }}
               </select>
