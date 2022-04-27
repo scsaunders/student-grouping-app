@@ -220,6 +220,8 @@ button#startOverButton {
   background-color: rgba(255, 68, 0, 0.158);
 }
 
+#preferredPartner,
+#gender,
 #classSelect {
   width: 327.99px;
   padding: 10px 12px;
@@ -230,12 +232,18 @@ button#startOverButton {
   border-radius: 10px;
 }
 
+#preferredPartner:focus,
+#preferredPartner:hover,
+#gender:focus,
+#gender:hover,
 #classSelect:focus,
 #classSelect:hover {
   outline: none;
   border: 2px solid #0077ff;
 }
 
+#gender option,
+#preferredPartner option,
 #classSelect option {
   background: #fff;
 }
@@ -246,4 +254,9 @@ img {
 
 .editContainer img {
   border-radius: 0px;
+}
+
+button#backHomeButton {
+  color: orangered;
+  background-color: rgba(255, 68, 0, 0.158);
 }
