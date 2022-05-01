@@ -1,10 +1,10 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
-  <title>Student Information</title>
-    <meta name="description" content="Student Information">
-    <meta name="keywords" content="html tutorial template">
-    <link rel="stylesheet" href="static/style.css">
+    <title>Student Information</title>
+    <meta name="description" content="Student Information" />
+    <meta name="keywords" content="html tutorial template" />
+    <link rel="stylesheet" href="static/style.css" />
     <!--<style>
       tr {
         height: 40px;
@@ -37,99 +37,117 @@
       }
     </style>-->
   </head>
+
   <body>
     <div id="container">
-    <div id="user">
-      Logged in: {{ user_info|safe }}
+      <div id="user">Logged in: {{ user_info|safe }}</div>
+      <h1>Grouping App</h1>
+      <h2>Student Info</h2>
+      <form action="/selectClass1" method="POST">
+        <table>
+          <tr>
+            <span class="font70" id="className"></span>
+          </tr>
+          <tr>
+            <td>Name:</td>
+            <td style="padding-top: 20px">
+              <span id="studentName"></span><br />
+            </td>
+
+            <td>
+              <select style="width: 150px" name="studentId" id="studentId">
+                <option></option>
+                {{ partner_options|safe }}
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>Gender:</td>
+            <td>
+              <select name="gender" id="gender" required>
+                <option value="n/a">N/A</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td style="width: 150px">Course Skill Level:</td>
+            <td>
+              <span class="rangeLabel">Beginner</span
+              ><input
+                type="range"
+                name="codingLevel"
+                min="0"
+                max="5"
+                value="1"
+                id="codingLevel"
+              /><span class="rangeLabel">Expert</span>
+            </td>
+          </tr>
+          <tr>
+            <td>Preferred Partner:</td>
+            <td>
+              <select name="preferredPartner" id="preferredPartner">
+                <option value="0"></option>
+                {{ partner_options|safe }}
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><button id="saveButton">Save</button></td>
+          </tr>
+        </table>
+        {{ student_table|safe }}
+      </form>
+      <script>
+        var studentName = "";
+        var studentVariables = window.location.href;
+
+        studentVariables = studentVariables.split("?");
+        studentVariables = studentVariables[1].split("&");
+
+        studentId = studentVariables[0].split("=");
+        studentId = studentId[1];
+
+        gender = studentVariables[1].split("=");
+        gender = gender[1];
+
+        codingLevel = studentVariables[2].split("=");
+        codingLevel = codingLevel[1];
+
+        preferredPartner = studentVariables[3].split("=");
+        preferredPartner = preferredPartner[1];
+
+        className = studentVariables[4].split("=");
+        className = decodeURI(className[1]);
+
+        document.getElementById("studentId").value = studentId;
+        document.getElementById("gender").value = gender;
+        document.getElementById("codingLevel").value = codingLevel;
+        document.getElementById("preferredPartner").value = preferredPartner;
+
+        var partnerOptions = document
+          .getElementById("preferredPartner")
+          .getElementsByTagName("option");
+
+        for (var x = 0; x < partnerOptions.length; x++) {
+          if (
+            partnerOptions[x].value ==
+            document.getElementById("studentId").value
+          ) {
+            studentName = partnerOptions[x].innerText;
+            partnerOptions[x].remove();
+          }
+        }
+
+        document.getElementById("studentName").innerHTML = studentName;
+        document.getElementById("className").innerHTML = className;
+        document.getElementById("studentId").style.display = "none";
+      </script>
+      <footer>Grouping App &#169; 2022</footer>
     </div>
-    <h1>Grouping App</h1>
-    <h2>Student Info</h2>
-    <form action="/selectClass1" method = "POST">
-      <table>
-        <tr>
-          <td style="padding-top: 20px;"><span id="studentName"></span><br><span class="font70" id="className"></span></td>
-          <td>
-          <select style="width: 150px;" name="studentId" id="studentId">
-            <option></option>
-            {{ partner_options|safe }}
-          </select>
-          
-        </td>
-        </tr>
-        <tr>
-          <td>Gender:</td>
-          <td>
-            <select name="gender" id="gender" required>
-              <option value="n/a">N/A</option>
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-              <option value="other">Other</option>
-            </select>
-          </td>
-        </tr>
-        <tr>
-          <td style="width: 150px;">Course Skill Level:</td>
-          <td><span class="rangeLabel">Beginner</span><input type="range" name="codingLevel" min="0" max="5" value="1" id="codingLevel"><span class="rangeLabel">Expert</span></td>
-        </tr>
-        <tr>
-          <td>Preferred Partner:</td>
-          <td>
-            <select style="width: 100px;" name="preferredPartner" id="preferredPartner">
-              <option value="0"></option>
-              {{ partner_options|safe }}
-            </select>
-          </td>
-        </tr>
-        <tr>
-          <td></td>
-          <td><button>Save</button></td>
-        </tr>
-      </table>
-      {{ student_table|safe }}
-</form>
-<script>
-
-  var studentName = "";
-  var studentVariables = window.location.href;
-
-  studentVariables = studentVariables.split("?");
-  studentVariables = studentVariables[1].split("&");
-
-  studentId = studentVariables[0].split("=");
-  studentId = studentId[1];
-
-  gender = studentVariables[1].split("=");
-  gender = gender[1];
-
-  codingLevel = studentVariables[2].split("=");
-  codingLevel = codingLevel[1];
-
-  preferredPartner = studentVariables[3].split("=");
-  preferredPartner = preferredPartner[1];
-
-  className = studentVariables[4].split("=");
-  className = decodeURI(className[1]);
-
-  document.getElementById("studentId").value = studentId;
-  document.getElementById("gender").value = gender;
-  document.getElementById("codingLevel").value = codingLevel;
-  document.getElementById("preferredPartner").value = preferredPartner;
-
-  var partnerOptions = document.getElementById("preferredPartner").getElementsByTagName("option");
-
-  for (var x = 0; x < partnerOptions.length; x++) {
-    if (partnerOptions[x].value ==  document.getElementById("studentId").value) {
-      studentName = partnerOptions[x].innerText;
-      partnerOptions[x].remove();
-    }
-  }
-
-  document.getElementById("studentName").innerHTML = studentName;
-  document.getElementById("className").innerHTML = className;
-  document.getElementById("studentId").style.display = "none";
-
-</script>
-<footer>Grouping App &#169; 2022</footer>
-</div>
   </body>
 </html>

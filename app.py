@@ -28,6 +28,7 @@ def index():
 def howToUse():
     return render_template('howToUse.html', partner_options=printResults(), user_info=getUser(), user_info_dash=getUserDash())
 
+
 @app.route('/aboutPairProgramming')
 def aboutPairProgramming():
     return render_template('aboutPairProgramming.html', partner_options=printResults(), user_info=getUser(), user_info_dash=getUserDash())

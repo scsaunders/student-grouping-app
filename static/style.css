@@ -82,7 +82,7 @@ td {
   padding-bottom: 5px;
 }
 h2 {
-  margin-bottom: 0px;
+  margin-bottom: 10px;
 }
 div.icon {
   margin: 20px;
@@ -222,6 +222,8 @@ button#startOverButton {
   background-color: rgba(255, 68, 0, 0.158);
 }
 
+#preferredPartner,
+#gender,
 #classSelect {
   width: 327.99px;
   padding: 10px 12px;
@@ -232,12 +234,48 @@ button#startOverButton {
   border-radius: 10px;
 }
 
+#preferredPartner:focus,
+#preferredPartner:hover,
+#gender:focus,
+#gender:hover,
 #classSelect:focus,
 #classSelect:hover {
   outline: none;
   border: 2px solid #0077ff;
 }
 
+#gender option,
+#preferredPartner option,
 #classSelect option {
   background: #fff;
+}
+
+#studentName {
+  color: #0077ff;
+  padding: 5px;
+  border: 2px solid #0077ff;
+  background-color: rgba(0, 119, 255, 0.153);
+  border-radius: 10px;
+}
+
+#className {
+  color: orange;
+  font-weight: bold;
+  padding: 5px;
+  border: 2px solid orange;
+  background-color: rgba(255, 166, 0, 0.157);
+  border-radius: 10px;
+}
+
+img {
+  border-radius: 10px;
+}
+
+.editContainer img {
+  border-radius: 0px;
+}
+
+button#backHomeButton {
+  color: orangered;
+  background-color: rgba(255, 68, 0, 0.158);
 }
