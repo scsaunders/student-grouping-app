@@ -369,7 +369,7 @@ def showGroups():
     tableGroupsDisplay += "</table>"
 
     print(hiddenStudentFields)
-    return render_template('showGroups.html', assignmentTitle=assignmentTitle, assignmentDescription=assignmentDescription, tableGroupsDisplay=tableGroupsDisplay, hiddenAssignmentFields=hiddenAssignmentFields, hiddenCriteriaFields=hiddenCriteriaFields, hiddenStudentFields=hiddenStudentFields)
+    return render_template('showGroups.html', assignmentTitle=assignmentTitle, assignmentDescription=assignmentDescription, tableGroupsDisplay=tableGroupsDisplay, hiddenAssignmentFields=hiddenAssignmentFields, hiddenCriteriaFields=hiddenCriteriaFields, hiddenStudentFields=hiddenStudentFields, user_info=getUser())
 
 
 def getStudentList(classId):
